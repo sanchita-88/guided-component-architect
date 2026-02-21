@@ -1,0 +1,126 @@
+/* Guided Component Architect — Frontend styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --glow-indigo: 0 0 40px rgba(99, 102, 241, 0.15);
+  --glow-violet: 0 0 60px rgba(139, 92, 246, 0.1);
+  --glass-bg: rgba(30, 41, 59, 0.5);
+  --glass-border: rgba(148, 163, 184, 0.08);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
+              radial-gradient(ellipse 60% 40% at 80% 100%, rgba(139, 92, 246, 0.08), transparent),
+              #0f172a;
+}
+
+/* Glass card */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.shadow-glow {
+  box-shadow: var(--glow-indigo), var(--glow-violet);
+}
+
+.shadow-glow-sm {
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.2);
+}
+
+/* Input */
+.input-field:hover:not(:disabled) {
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Download buttons */
+.btn-download {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.btn-download:hover {
+  background: rgba(99, 102, 241, 0.35);
+  color: #c7d2fe;
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Preview iframe fade-in */
+.preview-iframe {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Toast */
+.toast {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #fca5a5;
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+.toast.show {
+  animation: toastIn 0.3s ease-out;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+/* ---------- Preview iframe fix ---------- */
+
+.preview-iframe {
+  width: 100%;
+  min-height: 950px;   /* IMPORTANT */
+  border-radius: 14px;
+  border: none;
+  background: transparent;
+}
+
+/* Make preview container scroll properly */
+
+.preview-wrapper {
+  overflow-y: auto;
+  max-height: 75vh;
+  padding: 10px;
+}

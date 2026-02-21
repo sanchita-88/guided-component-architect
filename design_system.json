@@ -1,0 +1,13 @@
+{
+  "primary-color": "#6366f1",
+  "secondary-color": "#f59e0b",
+  "background-color": "#0f172a",
+  "surface-color": "#1e293b",
+  "text-color": "#f8fafc",
+  "error-color": "#ef4444",
+  "border-radius": "8px",
+  "font": "Inter",
+  "font-size-base": "16px",
+  "spacing-unit": "8px",
+  "shadow": "0 8px 32px rgba(99,102,241,0.2)"
+}

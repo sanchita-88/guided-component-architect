@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guided Component Architect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased">
+  <div class="min-h-screen flex flex-col items-center justify-start pt-12 pb-16 px-4">
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent tracking-tight">
+        Guided Component Architect
+      </h1>
+      <p class="mt-2 text-slate-400 text-sm md:text-base">
+        Agentic Angular Component Generator
+      </p>
+    </header>
+
+    <!-- Main Card -->
+    <main class="w-full max-w-2xl">
+      <div class="glass-card rounded-2xl p-6 md:p-8 shadow-glow">
+        <label for="prompt" class="block text-slate-300 text-sm font-medium mb-2">Describe your component</label>
+        <textarea
+          id="prompt"
+          rows="4"
+          class="input-field w-full rounded-xl px-4 py-3 bg-slate-800/60 border border-slate-600/50 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 resize-none transition-all"
+          placeholder="Describe your component..."
+        ></textarea>
+        <div class="mt-4 flex justify-end">
+          <button
+            id="generateBtn"
+            type="button"
+            class="btn-primary rounded-xl px-6 py-3 font-medium text-white shadow-glow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none"
+          >
+            <span id="btnText">Generate</span>
+            <span id="btnSpinner" class="hidden ml-2 inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Section -->
+      <section id="resultSection" class="mt-8 hidden">
+        <div class="glass-card rounded-2xl p-6 md:p-8 shadow-glow overflow-hidden">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold text-slate-200">Preview</h2>
+            <div id="downloadButtons" class="flex gap-2">
+              <a id="downloadTsx" href="#" target="_blank" rel="noopener" class="btn-download rounded-lg px-4 py-2 text-sm font-medium transition-all">
+                Download TSX
+              </a>
+              <a id="downloadZip" href="#" target="_blank" rel="noopener" class="btn-download rounded-lg px-4 py-2 text-sm font-medium transition-all">
+                Download ZIP
+              </a>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-slate-600/40 bg-slate-900/40 min-h-[320px]">
+            <iframe
+              id="previewFrame"
+              title="Component preview"
+              class="preview-iframe w-full h-[420px] border-0"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl shadow-lg font-medium hidden">
+    <span id="toastMessage"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
