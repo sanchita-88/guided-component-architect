@@ -1,11 +1,13 @@
 # Guided Component Architect
 
 🚀 **Live Demo:** https://guided-component-architect-ten.vercel.app/
+
 ✨ Features:
 - Agentic Generate → Validate → Correct Loop
 - Multi-turn component editing
 - Live preview rendering
 - Export as TSX or Angular files
+
 ⚠️ Note: Backend API may take a few seconds to wake if hosted on a free tier.
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue)
