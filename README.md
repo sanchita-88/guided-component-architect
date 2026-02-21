@@ -1,5 +1,18 @@
 # Guided Component Architect
 
+🚀 **Live Demo:** https://guided-component-architect-ten.vercel.app/
+✨ Features:
+- Agentic Generate → Validate → Correct Loop
+- Multi-turn component editing
+- Live preview rendering
+- Export as TSX or Angular files
+⚠️ Note: Backend API may take a few seconds to wake if hosted on a free tier.
+
+![Python](https://img.shields.io/badge/Python-3.11+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Agentic%20API-green)
+![LLM](https://img.shields.io/badge/LLM-Agentic%20Workflow-purple)
+![License](https://img.shields.io/badge/Status-Assignment%20Project-orange)
+
 ## Overview
 
 Guided Component Architect is a clean, modular agentic code generation pipeline that transforms natural language prompts into production-ready Angular components. The system enforces design system token compliance through automated validation and self-correction loops, ensuring generated components adhere to your design standards without manual intervention.
@@ -65,14 +78,14 @@ Tokens flow through the pipeline as follows:
 git clone <repo>
 cd guided-component-architect
 pip install -r requirements.txt
-cp .env.example .env
-# Add your OPENAI_API_KEY to .env
+Copy `.env.example` to a new file named `.env`.
+# Add your GROQ_API_KEY to .env
 ```
 
 Edit `.env` and set your OpenAI API key:
 ```
-OPENAI_API_KEY=sk-your-key-here
-MODEL_NAME=gpt-4o
+GROQ_API_KEY=gsk-your-key-here
+MODEL_NAME=llama-3.3-70b-versatile
 MAX_RETRIES=2
 ```
 
@@ -204,7 +217,7 @@ The preview page includes:
 
 1. **Python 3.11+**: The project uses modern Python type hints (`str | None`, `dict[str, str]`) that require Python 3.11 or later.
 
-2. **OpenAI API Access**: The system requires a valid OpenAI API key with access to the specified model (default: `gpt-4o`).
+2. **Groq API access (or OpenAI-compatible provider)**: The system requires a valid Groq API with access to the specified model (default: `llama-3.3-70b-versatile`).
 
 3. **Design System Compliance**: Generated components are validated against required tokens (primary-color, secondary-color, font) but may not catch all design violations. Manual review is recommended for production use.
 
