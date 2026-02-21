@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const API_BASE = 'http://127.0.0.1:8000';
+  const API_BASE = 'https://guided-component-architect-g336.onrender.com';
 
   const el = {
     prompt: document.getElementById('prompt'),
